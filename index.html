@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+    </style>
+  </head>
+
+  <body>
+    <div class="grayOut"></div>
+    <nav>
+      <ul>
+        <img class="close" src="./images/icon-close.svg" alt="close icon" />
+        <li id="collections-item" class="navItems"><a id="collections-link" class="navLinks" href="#">Collections</a>
+          <div id="nl-1" class="navline"></div>
+        </li>
+        <li id="men-item" class="navItems"><a id="men-link" class="navLinks" href="#">Men</a>
+          <div id="nl-2" class="navline"></div>
+        </li>
+        <li id="women-item" class="navItems"><a id="women-link" class="navLinks" href="#">Women</a>
+          <div id="nl-3" class="navline"></div>
+        </li>
+        <li id="about-item" class="navItems"><a id="about-link" class="navLinks" href="#">About</a>
+          <div id="nl-4" class="navline"></div>
+        </li>
+        <li id="contact-item" class="navItems"><a id="contact-link" class="navLinks" href="#">Contact</a>
+          <div id="nl-5" class="navline"></div>
+        </li>
+      </ul>
+      <img class="hamburger" src="./images/icon-menu.svg" alt="hamburger icon" />
+      <img class="logo" src="./images/logo.svg" alt="Logo" />
+      <img class="basket" src="./images/icon-cart.svg" alt="basket icon" />
+      <span class="basket-items">0</span>
+      <img class="avatar" src="./images/image-avatar.png" alt="Avatar image" />
+      <div class="cart">
+        <div class="cart-title">
+          <strong>Cart</strong>
+        </div>
+        <p class="empty">Your cart is empty.</p>
+        <div class="newItem">
+          <img class="newItem-pic" src="./images/image-product-1-thumbnail.jpg" alt="item image" />
+          <p class="newItem-name">Autumn Limited Editon Sneaker</p>
+          <p class="newItem-price">$125.00</p>
+          <p class="newItem-num">×0 =</p>
+          <p class="newItem-totalPrice">$250.00</p>
+          <img class="bin" src="./images/icon-delete.svg" alt="delete icon" />
+        </div>
+        <button class="checkout">Checkout</button>
+      </div>
+    </nav>
+    <main>
+      <div class="slider">
+        <img class="slider-close" src="./images/icon-close.svg" alt="close icon" />
+        <div class="left-side">
+          <div id="left-arrow-bg" class="arrow-bg">
+            <img id="left-arrow" class="arrow" src="./images/icon-previous.svg" alt="left arrow" />
+          </div>
+        </div>
+        <img class="photo" src="./images/image-product-1.jpg" alt="product photo" />
+        <div class="smalls">
+          <img id="small-1" class="small-photo" src="./images/image-product-1-thumbnail.jpg" alt="product photo" />
+          <img id="small-2" class="small-photo" src="./images/image-product-2-thumbnail.jpg" alt="product photo" />
+          <img id="small-3" class="small-photo" src="./images/image-product-3-thumbnail.jpg" alt="product photo" />
+          <img id="small-4" class="small-photo" src="./images/image-product-4-thumbnail.jpg" alt="product photo" />
+        </div>
+        <div class="right-side">
+          <div id="right-arrow-bg" class="arrow-bg">
+            <img id="right-arrow" class="arrow" src="./images/icon-next.svg" alt="right arrow" />
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
+        <small>Sneaker Company</small>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p class="discreption">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+      </div>
+      <div class="product-price">
+        <strong class="price">$125.00</strong>
+        <span class="discount">50%</span>
+        <p class="pre-price">$250.00</p>
+        <div class="change-price">
+          <img class="change-m" src="./images/icon-minus.svg" alt="minus icon" />
+          <p class="items">0</p>
+          <img class="change-p" src="./images/icon-plus.svg" alt="plus icon" />
+        </div>
+        <button class="add" type="button">
+          <img class="basket button-basket" src="./images/icon-button-cart.svg" alt="basket button" />
+          Add to cart
+        </button>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,578 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif; /* Weights: 400, 700 */  
+    outline: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+::selection {
+    background-color: hsl(25, 100%, 94%);
+    color: hsl(26, 100%, 55%);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Gray out the webpage when mobile menu opened */
+.grayOut {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+    background-color: black;
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+}
+
+
+ 
+/* Navbar Styles */
+nav {
+    padding: 2em 1em;
+    display: grid;
+    grid-template-columns: 2em 1fr 2em 1em 2em;
+    align-items: center;
+}
+
+.avatar {
+    max-width: 2em;
+    justify-self: flex-start;
+}
+
+ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0vw;
+    height: 200vh;
+    padding: 0em;
+    background-color: white;
+    z-index: 4;
+}
+
+li {
+    display: none;
+    margin: 2em 0;
+    font-weight: 700;
+    color: hsl(220, 13%, 13%);
+}
+
+.navline {
+    display: none;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.close {
+    display: none;
+    margin-bottom: 3em;
+    cursor: pointer;
+}
+
+.basket {
+    cursor: pointer;
+}
+
+.basket-items {
+    position: relative;
+    top: -40%;
+    right: 140%;
+    padding: .1em .4em;
+    background-color: hsl(26, 100%, 55%);
+    border-radius: 10px;
+    color: white;
+    font-weight: 400;
+    font-size: .5em;
+    text-align: center;
+    visibility: hidden;
+}
+
+
+
+/* Cart box Styles */
+.cart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    display: none;
+    z-index: 3;
+}
+
+.cart-title {
+    padding: 1.4em 2em;
+    border-bottom: 1px solid hsl(219, 9%, 80%);
+}
+
+.empty {
+    margin: 1em 0;
+    align-self: center;
+    font-weight: 700;
+    color: hsl(219, 9%, 45%);
+}
+
+.checkout {
+    margin: 2em 1.4em;
+}
+
+.newItem {
+    padding: 2em;
+    display: none;
+    grid-template-areas: 
+        "m n n n d"
+        "m p u t d";
+    grid-template-columns: 6em 3em 3em 1fr 2em;
+}
+
+.newItem-pic {
+    grid-area: m;
+    max-width: 5em;
+    border-radius: 5px;
+    justify-self: center;
+}
+
+.newItem-name {
+    grid-area: n;
+    font-weight: 700;
+    color: hsl(219, 9%, 45%);
+    align-self: center;
+}
+
+.newItem-price {
+    grid-area: p;
+    font-weight: 700;
+    font-size: .8em;
+    color: hsl(219, 9%, 45%);
+    align-self: center;
+}
+
+.newItem-num {
+    grid-area: u;
+    font-weight: 700;
+    font-size: .8em;
+    color: hsl(219, 9%, 45%);
+    align-self: center;
+    margin-left: .2em;
+}
+
+.newItem-totalPrice {
+    grid-area: t;
+    font-weight: 700;
+    font-size: 1.3em;
+    color: hsl(220, 13%, 13%);
+    align-self: center;
+}
+
+.bin {
+    grid-area: d;
+    cursor: pointer;
+    align-self: center;
+}
+
+
+
+/* Slider Styles */
+.photo {
+    max-width: 100%;
+}
+
+.slider {
+    width: 100%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.right-side, .left-side {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5em;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.left-side {
+    left: 0;
+}
+
+.arrow-bg {
+    width: 3em;
+    aspect-ratio: 1;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: 1px 1px 5px 0px hsl(221, 36%, 50%), -1px -1px 2px 0px lightcyan;
+    cursor: pointer;
+}
+
+.small-photo {
+    display: none;
+}
+
+.slider-close {
+    display: none;
+    position: absolute;
+    top: -5%;
+    right: 5%;
+    cursor: pointer;
+}
+
+
+
+/* Product Info Container Styles */
+.product-info {
+    padding: 2em 1em;
+}
+
+small {
+    text-transform: uppercase;
+    color: hsl(26, 100%, 55%);
+    letter-spacing: .1em;
+    font-weight: 400;
+}
+
+h1 {
+    margin: .5em 0;
+    color: hsl(220, 13%, 13%);
+}
+
+.discreption {
+    margin-top: 1.5em;
+    color: hsl(219, 9%, 45%);
+    line-height: 1.5em;
+}
+
+
+/* Product Price Container Styles */
+.product-price {
+    padding: 2em 1em;
+    display: grid;
+    grid-template-areas: 
+        "p d pp"
+        "c c c"
+        "b b b";
+    grid-template-columns: auto 1fr 5em;
+    gap: 1em;
+}
+
+.price {
+    justify-self: center;
+    align-self: center;
+    font-weight: 700;
+    font-size: 1.8em;
+    color: hsl(220, 13%, 13%);
+}
+
+.discount {
+    width: fit-content;
+    padding: .2em;
+    align-self: center;
+    justify-self: flex-start;
+    font-weight: 400;
+    color: hsl(26, 100%, 55%);
+    background-color: hsl(25, 100%, 94%);
+    border-radius: 5px;
+}
+
+.pre-price {
+    align-self: center;
+    justify-self: center;
+    text-decoration: line-through;
+    font-weight: 400;
+    font-size: .8em;
+    color: hsl(219, 9%, 45%);
+}
+
+
+
+.change-price {
+    grid-area: c;
+    display: grid;
+    grid-template-columns: 5em 1fr 5em;
+    grid-template-rows: 3.5em;
+    justify-items: center;
+    align-items: center;
+    background-color: hsl(223, 64%, 98%);
+    border-radius: 10px;
+}
+
+.change-p, .change-m {
+    cursor: pointer;
+}
+
+.items {
+    font-weight: 700;
+    color: hsl(220, 13%, 13%);
+}
+
+
+
+button {
+    grid-area: b;
+    padding: 1em 0;
+    background-color: hsl(26, 100%, 55%);
+    border: 1px solid hsl(26, 100%, 55%);
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+button:hover {
+    background-color: hsl(25, 100%, 94%);
+    color: hsl(26, 100%, 55%);
+}
+
+.button-basket {
+    margin: 0 .5em;
+}
+
+
+/* Create styles for larg tablet screen sizes */
+@media screen and (min-width: 1000px) and (max-width: 1025px) {
+    .slider {
+        display: flex;
+        justify-content: center;
+    }
+
+    .left-side, .right-side {
+        width: 10em;
+    }
+
+    .product-info, .product-price {
+        padding: 4em;
+    }
+
+    .small-photo {
+        display: none;
+    }
+}
+
+
+/* Create styles for desktop screen sizes */
+@media screen and (min-width: 1026px) {
+    h1 {
+        margin: .2em 0;
+        font-size: 3em;
+    }
+
+    .discreption {
+        margin: .8em 0;
+        font-size: 1.2em;
+        line-height: 1.8em;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    nav {
+        display: grid;
+        grid-template-areas: 
+            "l u b a";
+        grid-template-columns: 10em 1fr 3em 3em;
+        margin: 0 6em;
+        border-bottom: 1px solid hsl(219, 9%, 80%);
+    }
+
+    ul {
+        position: static;
+        display: block;
+        width: auto;
+        height: auto;
+        grid-area: u;
+        z-index: 0;
+    }
+
+    li {
+        position: relative;
+        display: inline-block;
+        margin: 0 1em;
+        font-weight: 400;
+        color: hsl(219, 9%, 45%);
+    }
+
+    .navline {
+        display: block;
+        position: absolute;
+        top: 250%;
+        width: 100%;
+        height: .5em;
+        background-color: hsl(26, 100%, 55%);
+        visibility: hidden;
+    }
+
+    li:hover > .navline {
+        visibility: visible;
+        animation: navline 0.2s linear;
+    }
+
+    @keyframes navline {
+        from {height: 0;}
+        to {height: .5em;}
+    }
+
+    .basket {
+        grid-area: b;
+    }
+
+    .avatar {
+        grid-area: a;
+    }
+
+    main {
+        margin: 4em 6em;
+        padding: 0 3em;
+        display: grid;
+        grid-template-areas: 
+            "m i"
+            "m p";
+        grid-template-columns: 40% 60%;
+    }
+
+    .slider {
+        width: 28em;
+        grid-area: m;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 5em 5em 5em 5em;
+        place-items: flex-start;
+        gap: 1em 0;
+        overflow: visible;
+        transform: translateY(-5%);
+    }
+
+    .smalls {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-info {
+        grid-area: i;
+        margin: 1em 0 0 1.5em;
+        padding: 0 4em;
+    }
+
+    .product-price { 
+        grid-area: p;
+        margin-left: 1.5em;
+        padding: 0 4em;
+        grid-template-areas: 
+            "p d d"
+            "pp pp pp"
+            "c c b";
+        grid-template-columns: 6.5em 4em 1fr;
+        grid-template-rows: 2em 1em 3em;
+    }
+
+    .price {
+        justify-self: flex-start;
+    }
+
+    .pre-price {
+        grid-area: pp;
+        justify-self: flex-start;
+    }
+
+    .left-side, .right-side {
+        display: none;
+    }
+
+    #left-arrow-bg {
+        position: relative;
+        top: 35%;
+        left: -40%;
+        width: 2.5em;
+    }
+
+    #right-arrow-bg {
+        position: relative;
+        top: 35%;
+        left: 90%;
+        width: 2.5em;
+    }
+
+    #left-arrow {
+        max-width: 50%;
+        transform: translateX(-10%);
+    }
+
+    #right-arrow {
+        max-width: 50%;
+        transform: translateX(10%);
+    }
+
+    .photo {
+        border-radius: 10px;
+        grid-area: mp;
+        max-width: 28em;
+        cursor: pointer;
+    }
+
+    .small-photo {
+        display: inline-block;
+        border-radius: 10px;
+        max-width: 6em;
+        justify-self: center;
+        cursor: pointer;
+        border: 3px solid white;
+        z-index: 10;
+    }
+
+    .small-photo:hover {
+        border: 3px solid hsl(26, 100%, 55%);
+        filter: opacity(50%);
+    }
+
+    #small-1 {
+        border-color: hsl(26, 100%, 55%);
+        filter: opacity(50%);
+    }
+
+    .cart {
+        top: 35%;
+        left: 80%;
+        width: 25em;
+    }
+
+    .basket-items {
+        position: absolute;
+        padding: .4em .8em;
+        top: 4%;
+        right: 13%;
+    }
+
+}
