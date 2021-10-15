@@ -59,7 +59,6 @@ button.addEventListener("mouseleave", changeBasketOut);
 
 /* Change number of cart items */
 const basketItems = document.querySelector(".basket-items");
-const addButton = document.querySelector(".add");
 
 function changeBasektItems() {
     if (items.innerHTML > 0) {
@@ -73,7 +72,7 @@ function changeBasektItems() {
 
 }
 
-addButton.addEventListener("click", changeBasektItems);
+button.addEventListener("click", changeBasektItems);
 
 
 /* Appear and display cart box */
@@ -97,17 +96,58 @@ grayOut.addEventListener("click", cartChangeOut);
 
 
 /* Add items to cart */
+/*
 const newItem = document.querySelector(".newItem");
 const newItems_num = document.querySelector(".newItem-num");
 const newItems_totlatPrice = document.querySelector(".newItem-totalPrice");
+*/
+const nums = items.innerHTML;
+console.log(nums);
 const empty = document.querySelector(".empty");
+
+const newItem = document.createElement("div");
+newItem.className = "newItem";
+newItem.style.order = "1";
+
+const newItem_pic = document.createElement("img");
+newItem_pic.className = "newItem-pic";
+newItem_pic.src = itemsInfo[0]["small-pic-1"];
+newItem_pic.alt = "item image";
+newItem.appendChild(newItem_pic);
+
+const newItem_name = document.createElement("p");
+newItem_name.className = "newItem-name";
+newItem_name.innerHTML = itemsInfo[0]["name"];
+newItem.appendChild(newItem_name);
+
+const newItem_price = document.createElement("p");
+newItem_price.className = "newItem-price";
+newItem_price.innerHTML = itemsInfo[0]["price"];
+newItem.appendChild(newItem_price);
+
+const newItem_num = document.createElement("p");
+newItem_num.className = "newItem-num";
+newItem.appendChild(newItem_num);
+
+const newItem_totlatPrice = document.createElement("p");
+newItem_totlatPrice.className = "newItem-totalPrice";
+newItem.appendChild(newItem_totlatPrice);
+
+const bin = document.createElement("img");
+bin.className = "bin";
+bin.src = "images/icon-delete.svg";
+bin.alt = "delete icon";
+newItem.appendChild(bin);
 
 function changeItems() {
     if (items.innerHTML > 0) {
-        empty.style.display = "none";    
-        newItems_num.innerHTML = `×${items.innerHTML}  =`;
-        newItems_totlatPrice.innerHTML = `$${125 * items.innerHTML}.00`;
+        empty.style.display = "none"; 
+        newItem_num.innerHTML = `×${items.innerHTML}  =`;
+        newItem_totlatPrice.innerHTML = `$${125 * items.innerHTML}.00`;
+        cartBox.appendChild(newItem);
         newItem.style.display = "grid";
+        items.innerHTML = 0;
+        count = 0;
     } else {
         newItem.style.display = "none";
         empty.style.display = "block"; 
@@ -119,8 +159,6 @@ button.addEventListener("click", changeItems);
 
 
 /* Change the color of delete icon */
-const bin = document.querySelector(".bin");
-
 function grayColor() {
     bin.src = "images/icon-delete.svg";
 }
@@ -137,6 +175,8 @@ bin.addEventListener("mouseleave", grayColor);
 function removeItems() {
     cartBox.removeChild(newItem);
     empty.style.display = "block";
+    basketItems.style.visibility = "hidden";
+    basketItems.innerHTML = 0;
 }
 
 bin.addEventListener("click", removeItems);
