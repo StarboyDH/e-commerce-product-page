@@ -134,6 +134,7 @@ li {
 
 .checkout {
     margin: 2em 1.4em;
+    order: 2;
 }
 
 .newItem {
